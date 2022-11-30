@@ -1,12 +1,11 @@
-import './globals.css'
+import './globals.css';
+import { Red_Hat_Display } from '@next/font/google';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const redHatDisplay = Red_Hat_Display({ subsets: ['latin'], variable: '--font-red-hat' });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en' className={redHatDisplay.variable}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -14,5 +13,5 @@ export default function RootLayout({
       <head />
       <body>{children}</body>
     </html>
-  )
+  );
 }

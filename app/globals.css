@@ -1,26 +1,29 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@layer base {
   body {
-    color: white;
-    background: black;
+    @apply text-ebony-Clay bg-white-transparent;
+  }
+
+  h1 {
+    @apply text-[64px] leading-[64px] font-black;
+  }
+  h2 {
+    @apply text-[40px] leading-[44px] font-black;
+  }
+  p {
+    @apply text-lg font-medium text-oslo-Grey;
+  }
+}
+
+@layer components {
+  .tab {
+    @apply leading-[26px] tracking-[4px] uppercase font-black;
+  }
+
+  .hero-img {
+    @apply after:absolute after:bg-[url('/assets/tablet/image-hero.png') after:bg-center after:w-[414] after:h-[153] after:top-0 after: left-0 ];
   }
 }
